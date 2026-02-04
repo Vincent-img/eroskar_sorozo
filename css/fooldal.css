@@ -1,3 +1,38 @@
-body{
-    
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+body{
+    background-color: #402a23;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar  {
+    text-decoration: none;
+    background-color: #a55233;
+    padding: 15px;
+    display: flex;
+
+    a{
+        color: #1d1716;
+        margin: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+.tartalom{
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+    background-image: url("../img/fa.jpeg");
+    margin: 30px;
+    padding: 5px;
+}
+
+/* Színkódok:
+fekete      background: #1d1716; 
+sötét barna background: #402a23; 
+nutella     background: #a55233; 
+rohadt vaj  background: #f3bc77;  
+*/
