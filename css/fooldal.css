@@ -1,25 +1,37 @@
-html{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body{
     background-color: #402a23;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 .navbar  {
     text-decoration: none;
-    background-color: #a55233;
-    padding: 15px;
+    background-color: #f3bc77;
+    
     display: flex;
+    width: 100%;
 
     a{
-        color: #1d1716;
+        color: #f3bc77;
         margin: 10px;
         text-decoration: none;
         font-weight: bold;
+        background-color: rgb(121, 67, 31);
+        padding: 5px;
+        border-radius: 10px;
+        display: flex;
+        display: grid;
     }
+}
+#logo img{
+    max-width: 50px;
+    display: flex;
+    float: right;
+    border-radius: 50px;
+    margin: 5px;
 }
 .tartalom{
     text-align: center;
@@ -29,6 +41,9 @@ body{
     margin: 30px;
     padding: 5px;
 }
+
+
+
 
 /* Színkódok:
 fekete      background: #1d1716; 
