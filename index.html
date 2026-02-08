@@ -3,37 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erőskar főoldal</title>
+    <title>Erőskar Söröző</title>
     <link rel="stylesheet" href="css/fooldal.css">
 </head>
 <body>
     <header>
         <div class="navbar">
-            
-            <div class="oldalak" id="a2">
-                <a href="rendezvenyek.html" title="tovább a rendezvények oldalra">Rendezvények</a>
-            </div>
-            <div class="oldalak" id="a3">
-                <a href="galeria.html" title="tovább a galériába">Galéria</a>
-            </div>
-            <div class="oldalak" id="a4">
-                <a href="kapcsolat.html" title="vedd fel vlünk a kapcsolatot">Kapcsolat</a>
-            </div>
             <div id="logo">
-                <img src="../img/logo.png" alt="ez itt a logó" title="Sörözőnk logója">
+                <a href="index.html">
+                    <img src="../eroskar_sorozo/img/logo.png" alt="Sörözőnk logója">
+                </a>
+            </div>
+
+            <div class="hamburger" onclick="menuKapcsolo()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="nav-links" id="menuLista">
+                <a href="rendezvenyek.html">Rendezvények</a>
+                <a href="galeria.html">Galéria</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
             </div>
         </div>
     </header>
+
     <main>
         <div class="tartalom">
             <h1>Üdvözöljük az Erőskar Söröző honlapján!</h1>
             <p>Fedezze fel kínálatunkat és kövesse rendezvényeinket!</p>
         </div>
+        <div class="tartalom2">
+            <p>töltelék szöveg valami valami</p>
+        </div>
     </main>
+
     <footer>
         <div class="lablec">
-            <p>valamiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+            <p>© 2026 Erőskar Söröző - Minden jog fenntartva</p>
         </div>
     </footer>
+
+    <script>
+        function menuKapcsolo() {
+            var menu = document.getElementById("menuLista");
+            menu.classList.toggle("nyitva");
+        }
+    </script>
 </body>
 </html>

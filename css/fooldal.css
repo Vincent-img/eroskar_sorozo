@@ -3,45 +3,27 @@
 }
 
 body {
-    background-color: #402a23;
-    background-image: url("../img/hatter.jpg"); 
-    background-repeat: no-repeat;
+    background: radial-gradient(circle, rgb(172, 132, 82) 0%, rgba(64, 42, 35, 1) 100%);
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f3bc77;
 }
 
 
 .navbar {
     background-color: #f3bc77;
     display: flex;
-    width: 100%;
-    align-items: center; 
-    padding: 5px 20px;
+    align-items: center;
+    padding: 10px 20px;
     min-height: 70px;
+    flex-wrap: wrap; 
 }
-
-
-.navbar a {
-    color: #f3bc77;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-    background-color: rgb(121, 67, 31);
-    padding: 5px 5px;
-    border-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #a55233; 
-}
-
 
 #logo {
-    margin-left: auto; 
+    order: 1; 
     display: flex;
     align-items: center;
 }
@@ -49,43 +31,108 @@ body {
 #logo img {
     max-width: 55px;
     border-radius: 50%;
-    border: 2px solid rgb(121, 67, 31);
+    border: 2px solid rgb(71, 42, 22);
+}
+
+.nav-links {
+    order: 2; 
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #f3bc77;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgb(121, 67, 31);
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #462215;
+}
+
+.hamburger {
+    display: none; 
 }
 
 
-.tartalom {
+.tartalom, .tartalom2 {
     text-align: center;
     margin: 50px auto;
-    max-width: 800px;
-    color: #f3bc77;
-    background-image: url("../img/fa.jpeg"); 
+    width: 90%;
+    max-width: 1200px;
     padding: 40px;
     border-radius: 15px;
 }
-.lablec{
+
+.tartalom {
+    background-image: url("../img/fa.jpeg");
+    background-size: cover;
+}
+
+.tartalom2 {
+    background-color: rgb(154, 97, 60);
+}
+
+.lablec {
     background-color: #f3bc77;
+    color: #462215;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
 }
 
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        padding: 15px;
+        justify-content: space-between; 
+    }
+
+    .hamburger {
+        display: block;
+        order: 1; 
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 30px;
+        height: 4px;
+        background-color: #462215;
+        margin: 5px 0;
+        border-radius: 2px;
     }
 
     #logo {
-        margin: 0 0 15px 0; 
-        order: -1; 
+        order: 2;
     }
 
-    .navbar a {
+    .nav-links {
+        display: none; 
+        order: 3;
         width: 100%;
+        flex-direction: column;
+        margin-left: 0;
+        padding-top: 15px;
+    }
+
+    .nav-links.nyitva {
+        display: flex;
+    }
+
+    .nav-links a {
         margin: 5px 0;
+        width: 100%;
         text-align: center;
     }
 
-    .tartalom {
-        margin: 20px;
+   
+    .tartalom, .tartalom2 {
+        margin: 20px auto;
+        width: 95%;
         padding: 20px;
     }
-} 
+}
