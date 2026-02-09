@@ -12,7 +12,7 @@ body {
     color: #f3bc77;
 }
 
-
+/* --- NAVBAR --- */
 .navbar {
     background-color: #f3bc77;
     display: flex;
@@ -59,7 +59,7 @@ body {
     display: none; 
 }
 
-
+/* --- TARTALOM SZEKCIÓK --- */
 .tartalom, .tartalom2 {
     text-align: center;
     margin: 50px auto;
@@ -76,17 +76,44 @@ body {
 
 .tartalom2 {
     background-color: rgb(154, 97, 60);
-
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Két egyenlő oszlop */
-    gap: 30px;
     margin: 40px auto;
-    max-width: 1100px;
-    width: 90%;
-    align-items: stretch;
-    
 }
 
+.tartalom2 p {
+    background-color: #462215;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px; /* Hogy legyen hely a szöveg és a rács között */
+}
+
+/* --- RESZPONZÍV RÁCS (Kép és Térkép) --- */
+.racs {
+    display: grid;
+    /* Automatikusan vált 1 és 2 oszlop között a hely függvényében */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+}
+
+.utca-kep {
+    width: 100%; /* Kitölti a rács oszlopát */
+    height: auto;
+    max-width: 100%; /* Megakadályozza a kilógást */
+    border: #462215 solid 2px;
+    border-radius: 25px;
+    display: block;
+    object-fit: cover;
+}
+
+#map {
+    width: 100% !important; /* Felülírja az iframe fix szélességét */
+    min-height: 350px; /* Mobilon is maradjon magassága */
+    border: #462215 solid 2px;
+    border-radius: 25px;
+    display: block;
+}
+
+/* --- LÁBLEC --- */
 .lablec {
     background-color: #f3bc77;
     color: #462215;
@@ -94,12 +121,8 @@ body {
     padding: 15px;
     margin-top: 30px;
 }
-.utca-kep{
-    max-width: 600px;
-}
 
-
-
+/* --- MOBIL NÉZET (768px alatt) --- */
 @media (max-width: 768px) {
     .navbar {
         justify-content: space-between; 
@@ -142,10 +165,18 @@ body {
         text-align: center;
     }
 
-   
     .tartalom, .tartalom2 {
         margin: 20px auto;
         width: 95%;
         padding: 20px;
+    }
+
+    .racs {
+        grid-template-columns: 1fr; /* Mobilon biztosan egymás alatt lesznek */
+        gap: 20px;
+    }
+
+    #map {
+        min-height: 300px;
     }
 }
