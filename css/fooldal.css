@@ -81,7 +81,27 @@ body {
     margin: 40px auto;
     font-size: 1.4em;
 }
-
+.tartalom3{
+    background-color: rgb(154, 97, 60);
+    margin: 40px auto;
+    font-size: 1.4em;
+    text-align: center;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: 15px;
+    
+    p{
+        background-color: #462215;
+    }
+}
+.zsombor{
+    max-width: 400px;
+    img{
+        max-width: 300px;
+    }
+}
 .tartalom2 p {
     background-color: #462215;
     padding: 15px;
