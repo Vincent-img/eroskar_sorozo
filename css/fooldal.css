@@ -1,3 +1,4 @@
+/* --- ALAPBEÁLLÍTÁSOK --- */
 * {
     box-sizing: border-box;
 }
@@ -12,7 +13,7 @@ body {
     color: #f3bc77;
 }
 
-
+/* --- NAVIGÁCIÓ --- */
 .navbar {
     background-color: #f3bc77;
     display: flex;
@@ -56,21 +57,14 @@ body {
     background-color: #462215;
 }
 
-.hamburger {
-    display: none; 
-}
-
-
-.tartalom, .tartalom2 {
+/* --- TARTALMI SZEKCIÓK --- */
+.tartalom {
     text-align: center;
     margin: 50px auto;
     width: 90%;
     max-width: 1200px;
     padding: 40px;
     border-radius: 15px;
-}
-
-.tartalom {
     background-image: url("../img/fa.jpeg");
     background-size: cover;
     font-size: 1.4em;
@@ -78,38 +72,80 @@ body {
 
 .tartalom2 {
     background-color: rgb(154, 97, 60);
-    margin: 40px auto;
-    font-size: 1.4em;
-}
-.tartalom3{
-    background-color: rgb(154, 97, 60);
-    margin: 40px auto;
-    font-size: 1.4em;
     text-align: center;
-    margin: 50px auto;
+    margin: 40px auto;
     width: 90%;
     max-width: 1200px;
     padding: 40px;
     border-radius: 15px;
-    
-    p{
-        background-color: #462215;
-    }
+    font-size: 1.4em;
 }
-.zsombor{
-    max-width: 400px;
-    img{
-        max-width: 300px;
-    }
-}
-.tartalom2 p {
-    background-color: #462215;
-    padding: 15px;
+
+/* --- RÓLUNK OLDAL: DOLGOZÓI RÁCS --- */
+.tartalom3 {
+    background-color: rgb(154, 97, 60);
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px;
     border-radius: 15px;
-    margin-bottom: 30px;
 }
 
+.dolgozo-racs {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Két oszlopos elrendezés */
+    gap: 30px;
+    justify-items: center;
+}
 
+.kartya {
+    background-color: #462215;
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kartya img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #f3bc77;
+}
+
+.kartya h3 {
+    color: #f3bc77;
+    margin: 10px 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.kartya p {
+    background-color: transparent; /* Itt nem kell külön háttér a p-nek */
+    color: #f3bc77;
+    font-size: 0.95em;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.kartya .idezet {
+    font-style: italic;
+    border-top: 1px solid #f3bc77;
+    padding-top: 10px;
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- FŐOLDALI RÁCS (KÉP ÉS TÉRKÉP) --- */
 .racs {
     display: flex;
     flex-direction: row;
@@ -119,21 +155,17 @@ body {
 }
 
 .utca-kep {
-    flex: 0 0 auto; 
-    width: auto;
-    max-width: 50%; 
-    height: auto;
+    flex: 1;
+    max-width: 50%;
     border: #462215 solid 4px;
     border-radius: 25px;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 #map {
-    flex: 1; 
+    flex: 1;
     border: #462215 solid 4px;
     border-radius: 25px;
-    display: block;
-    width: 100% !important;
 }
 
 /* --- LÁBLEC --- */
@@ -144,80 +176,34 @@ body {
     padding: 15px;
     margin-top: 30px;
 }
-#cim {
-    font-size: 2.8em;
-    margin-bottom: 50px;
+
+/* --- MOBIL NÉZET --- */
+.hamburger {
+    display: none; 
 }
 
-
-
-
-
-
-
-
-
-
 @media (max-width: 768px) {
-    .navbar {
-        justify-content: space-between; 
-    }
-
-    .hamburger {
-        display: block;
-        order: 1; 
-        cursor: pointer;
-    }
-
-    .bar {
-        width: 30px;
-        height: 4px;
-        background-color: #462215;
-        margin: 5px 0;
-        border-radius: 2px;
-    }
-
-    #logo {
-        order: 2;
-    }
-
+    .hamburger { display: block; cursor: pointer; }
+    .bar { width: 30px; height: 4px; background-color: #462215; margin: 5px 0; border-radius: 2px; }
+    
     .nav-links {
-        display: none; 
-        order: 3;
+        display: none;
         width: 100%;
         flex-direction: column;
         margin-left: 0;
-        padding-top: 15px;
     }
 
-    .nav-links.nyitva {
-        display: flex;
-    }
+    .nav-links.nyitva { display: flex; }
 
-    .nav-links a {
-        margin: 5px 0;
-        width: 100%;
-        text-align: center;
+    .dolgozo-racs {
+        grid-template-columns: 1fr; /* Mobilom egymás alá kerülnek a dolgozók */
     }
-
-    .tartalom, .tartalom2 {
-        margin: 20px auto;
-        width: 95%;
-        padding: 20px;
-    }
-
 
     .racs {
         flex-direction: column;
-        gap: 20px;
     }
 
     .utca-kep {
         max-width: 100%;
-        height: 300px;
-    }
-
-    #map {
-        min-height: 300px;
     }
 }
