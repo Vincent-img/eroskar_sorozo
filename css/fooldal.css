@@ -182,28 +182,63 @@ body {
     display: none; 
 }
 
-@media (max-width: 768px) {
-    .hamburger { display: block; cursor: pointer; }
-    .bar { width: 30px; height: 4px; background-color: #462215; margin: 5px 0; border-radius: 2px; }
-    
+@media (max-width: 850px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    .hamburger {
+        display: block !important;
+        order: 1;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .bar {
+        width: 30px;
+        height: 4px;
+        background-color: #462215;
+        margin: 5px 0;
+        border-radius: 2px;
+    }
+
+    #logo {
+        order: 2;
+    }
+
+    /* A lenyíló menü javítása */
     .nav-links {
         display: none;
         width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #f3bc77;
         flex-direction: column;
-        margin-left: 0;
+        padding: 15px;
+        z-index: 1000;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
 
-    .nav-links.nyitva { display: flex; }
-
-    .dolgozo-racs {
-        grid-template-columns: 1fr; /* Mobilom egymás alá kerülnek a dolgozók */
+    .nav-links.nyitva {
+        display: flex;
     }
 
-    .racs {
-        flex-direction: column;
+    /* A gombok elcsúszása elleni védelem */
+    .nav-links a {
+        margin: 8px 0; /* Megfelelő távolság a gombok között */
+        width: 100%;
+        text-align: center;
+        padding: 12px; /* Kényelmesebb kattintási felület */
+        display: block;
     }
 
-    .utca-kep {
-        max-width: 100%;
+    .racs, .dolgozo-racs {
+        grid-template-columns: 1fr !important;
     }
-}
+
+    .utca-kep-kontener, .terkep-kontener, .kartya {
+        height: auto;
+        min-height: 350px;
+    }
