@@ -149,25 +149,33 @@ body {
 .racs {
     display: flex;
     flex-direction: row;
-    align-items: stretch; 
+    align-items: flex-start; /* Fontos, hogy ne nyújtsa túl a tárolót */
     gap: 30px;
     width: 100%;
 }
 
 .utca-kep {
-    flex: 1;
-    max-width: 50%;
+    width: 70%; /* Itt adjuk meg fixen a 70%-ot */
+    height: 500px; /* Itt a magasság */
     border: #462215 solid 4px;
     border-radius: 25px;
     object-fit: cover;
 }
 
 #map {
-    flex: 1;
+    width: 30%; /* A maradék 30% (mínusz a gap) */
+    height: 500px; /* Pontosan ugyanaz, mint a képnél */
     border: #462215 solid 4px;
     border-radius: 25px;
+    flex-grow: 1; /* Ez kitölti a maradék helyet a gap mellett */
 }
-
+.hater{
+    background-color: #462215;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 25px;
+    border: #f3bc77 solid 2px;
+}
 /* --- LÁBLEC --- */
 .lablec {
     background-color: #f3bc77;
@@ -186,6 +194,7 @@ body {
     .navbar {
         justify-content: space-between;
         padding: 10px 15px;
+        position: relative; /* Segít az abszolút pozicionált menünek */
     }
 
     .hamburger {
@@ -207,38 +216,49 @@ body {
         order: 2;
     }
 
-    /* A lenyíló menü javítása */
+    /* A lenyíló menü javítása: lebegő stílus lekerekítéssel */
     .nav-links {
         display: none;
-        width: 100%;
+        /* Szélesség: 100% mínusz a két oldali 20px távolság */
+        width: calc(100% - 40px); 
         position: absolute;
-        top: 70px;
-        left: 0;
+        top: 70px; /* A navbar magasságához igazítva */
+        left: 20px; /* Bal oldali 20px gap */
         background-color: #f3bc77;
         flex-direction: column;
-        padding: 15px;
+        padding: 20px;
         z-index: 1000;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        
+        /* Csak az alsó két sarok lekerekítése */
+        border-radius: 0 0 25px 25px; 
+        margin: 0;
     }
 
     .nav-links.nyitva {
         display: flex;
     }
 
-    /* A gombok elcsúszása elleni védelem */
+    /* A gombok elrendezése a menün belül */
     .nav-links a {
-        margin: 8px 0; /* Megfelelő távolság a gombok között */
-        width: 100%;
+        margin: 10px auto; 
+        width: 100%; 
         text-align: center;
-        padding: 12px; /* Kényelmesebb kattintási felület */
         display: block;
+        padding: 12px;
     }
 
+    /* Tartalmi elemek egymás alá rendezése mobilon */
     .racs, .dolgozo-racs {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
     }
 
-    .utca-kep-kontener, .terkep-kontener, .kartya {
+    .utca-kep, #map, .kartya {
+        width: 100% !important;
+        max-width: 100%;
         height: auto;
         min-height: 350px;
     }
+}
