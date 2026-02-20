@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Események - Erőskar Söröző</title>
+    <link rel="stylesheet" href="css/fooldal.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Sörözőnk logója">
+                </a>
+            </div>
+
+            <div class="hamburger" onclick="menuKapcsolo()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <main>
+        <div class="tartalom">
+            
+            <h1>Üdvözöljük az Erőskar Söröző honlapján!</h1>
+            <p>Fedezze fel kínálatunkat és kövesse rendezvényeinket!</p>
+        </div>
+        <div class="tartalom2">
+            
+            </div>
+            
+            
+        </div>
+            
+    </main>
+
+    <footer>
+        <div class="lablec">
+            <p>©2026 Erőskar Söröző - Minden jog fenntartva</p>
+        </div>
+    </footer>
+
+    <script>
+        function menuKapcsolo() {
+            var menu = document.getElementById("menuLista");
+            menu.classList.toggle("nyitva");
+        }
+    </script>
+</body>
+</html>
