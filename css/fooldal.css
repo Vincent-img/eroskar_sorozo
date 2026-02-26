@@ -155,19 +155,19 @@ body {
 }
 
 .utca-kep {
-    width: 70%; /* Itt adjuk meg fixen a 70%-ot */
-    height: 500px; /* Itt a magasság */
+    width: 70%; 
+    height: 500px; 
     border: #462215 solid 4px;
     border-radius: 25px;
     object-fit: cover;
 }
 
 #map {
-    width: 30%; /* A maradék 30% (mínusz a gap) */
-    height: 500px; /* Pontosan ugyanaz, mint a képnél */
+    width: 30%; 
+    height: 500px; 
     border: #462215 solid 4px;
     border-radius: 25px;
-    flex-grow: 1; /* Ez kitölti a maradék helyet a gap mellett */
+    flex-grow: 1; 
 }
 .hater{
     background-color: #462215;
@@ -176,7 +176,15 @@ body {
     border-radius: 25px;
     border: #f3bc77 solid 2px;
 }
-/* --- LÁBLEC --- */
+#rendezvenyek_kepek{
+    width: 70%; 
+    height: 500px; 
+    border: #462215 solid 4px;
+    border-radius: 25px;
+    object-fit: cover;
+    
+}
+
 .lablec {
     background-color: #f3bc77;
     color: #462215;
@@ -185,7 +193,7 @@ body {
     margin-top: 30px;
 }
 
-/* --- MOBIL NÉZET --- */
+
 .hamburger {
     display: none; 
 }
@@ -194,7 +202,7 @@ body {
     .navbar {
         justify-content: space-between;
         padding: 10px 15px;
-        position: relative; /* Segít az abszolút pozicionált menünek */
+        position: relative; 
     }
 
     .hamburger {
@@ -216,21 +224,21 @@ body {
         order: 2;
     }
 
-    /* A lenyíló menü javítása: lebegő stílus lekerekítéssel */
+    
     .nav-links {
         display: none;
-        /* Szélesség: 100% mínusz a két oldali 20px távolság */
+       
         width: calc(100% - 40px); 
         position: absolute;
-        top: 70px; /* A navbar magasságához igazítva */
-        left: 20px; /* Bal oldali 20px gap */
+        top: 70px; 
+        left: 20px; 
         background-color: #f3bc77;
         flex-direction: column;
         padding: 20px;
         z-index: 1000;
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         
-        /* Csak az alsó két sarok lekerekítése */
+       
         border-radius: 0 0 25px 25px; 
         margin: 0;
     }
