@@ -1,4 +1,3 @@
-/* --- ALAPBEÁLLÍTÁSOK --- */
 * {
     box-sizing: border-box;
 }
@@ -13,7 +12,7 @@ body {
     color: #f3bc77;
 }
 
-/* --- NAVIGÁCIÓ --- */
+
 .navbar {
     background-color: #f3bc77;
     display: flex;
@@ -32,7 +31,7 @@ body {
 #logo img {
     max-width: 55px;
     border-radius: 50%;
-    border: 4px solid rgb(71, 42, 22);
+    border: 2px solid rgb(71, 42, 22);
 }
 
 .nav-links {
@@ -57,7 +56,7 @@ body {
     background-color: #462215;
 }
 
-/* --- ÁLTALÁNOS TARTALMI SZEKCIÓK --- */
+
 .tartalom {
     text-align: center;
     margin: 50px auto;
@@ -70,7 +69,7 @@ body {
     font-size: 1.4em;
 }
 
-/* Alapértelmezett tartalom2 (Főoldalhoz) */
+
 .tartalom2 {
     background-color: rgb(154, 97, 60);
     text-align: center;
@@ -80,11 +79,9 @@ body {
     padding: 40px;
     border-radius: 15px;
     font-size: 1.4em;
-    display: block; /* Biztosítja, hogy a főoldal ne essen szét */
+    display: block; 
 }
 
-/* --- ESEMÉNYEK OLDAL SPECIFIKUS JAVÍTÁSA --- */
-/* A tartalom2-n belüli div-ek formázása az események oldalon */
 .tartalom2 > div:not(.racs):not(.hater) {
     display: flex; 
     align-items: center;
@@ -98,7 +95,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Képek méretezése az eseményeknél */
+
 #rendezvenyek_kepek {
     width: 35%; 
     height: auto;
@@ -124,7 +121,6 @@ body {
     line-height: 1.4;
 }
 
-/* --- RÓLUNK OLDAL: DOLGOZÓI RÁCS --- */
 .tartalom3 {
     background-color: rgb(154, 97, 60);
     margin: 40px auto;
@@ -186,9 +182,9 @@ body {
     width: 100%;
 }
 
-/* --- FŐOLDALI RÁCS --- */
+
 .racs {
-    display: flex !important; /* !important a biztonság kedvéért */
+    display: flex !important; 
     flex-direction: row !important;
     align-items: flex-start;
     gap: 30px;
@@ -220,7 +216,7 @@ body {
     border: #f3bc77 solid 2px;
 }
 
-/* --- LÁBLEC --- */
+
 .lablec {
     background-color: #f3bc77;
     color: #462215;
@@ -229,9 +225,16 @@ body {
     margin-top: 30px;
 }
 
-/* --- RESPONSIVE (MOBIL) --- */
 .hamburger {
     display: none; 
+}
+
+
+.italdiv{
+    
+    .italcim{
+        font-size: 2em;
+    } 
 }
 
 @media (max-width: 850px) {
@@ -283,7 +286,7 @@ body {
         padding: 12px;
     }
 
-    /* Mobilon minden egymás alá */
+
     .racs, 
     .dolgozo-racs, 
     .tartalom2 > div:not(.hater) {
