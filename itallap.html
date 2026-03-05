@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erőskar Söröző</title>
+    <link rel="stylesheet" href="css/fooldal.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Sörözőnk logója">
+                </a>
+            </div>
+
+            <div class="hamburger" onclick="menuKapcsolo()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="nav-links" id="menuLista">
+                <a href="rendezvenyek.html">Rendezvények</a>
+                <a href="galeria.html">Galéria</a>
+                <a href="itallap.html">Ital lap</a>
+                <a href="rolunk.html">Rólunk</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="tartalom">
+            
+            <h1>Üdvözöljük az Erőskar Söröző honlapján!</h1>
+            <p>Fedezze fel kínálatunkat és kövesse rendezvényeinket!</p>
+        </div>
+        <div class="tartalom2">
+            <h1 id="cim">Találkozzunk a törzshelyeden!</h1>
+            <div class="hater">
+                <p>Látogass el hozzánk Baján, a Türr István utca 2. szám alatt! Akár egy sűrű munkanap után lazítanál, akár a hétvégi buli alapozását tervezed, nálunk mindig nyitva áll az ajtó.</p>
+            </div>
+            
+        </div>
+            
+    </main>
+
+    <footer>
+        <div class="lablec">
+            <p>©2026 Erőskar Söröző - Minden jog fenntartva</p>
+        </div>
+    </footer>
+
+    <script>
+        function menuKapcsolo() {
+            var menu = document.getElementById("menuLista");
+            menu.classList.toggle("nyitva");
+        }
+    </script>
+</body>
+</html>

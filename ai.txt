@@ -1,3 +1,5 @@
 az oldalon látható szövegek
 a hamburger menü mechanikája
 ötletelés
+
+az oldalon látható képek
