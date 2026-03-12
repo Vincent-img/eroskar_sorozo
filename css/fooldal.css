@@ -12,7 +12,7 @@ body {
     color: #f3bc77;
 }
 
-
+/* --- Navigáció --- */
 .navbar {
     background-color: #f3bc77;
     display: flex;
@@ -56,7 +56,7 @@ body {
     background-color: #462215;
 }
 
-
+/* --- Tartalmi elemek --- */
 .tartalom {
     text-align: center;
     margin: 50px auto;
@@ -68,7 +68,6 @@ body {
     background-size: cover;
     font-size: 1.4em;
 }
-
 
 .tartalom2 {
     background-color: rgb(154, 97, 60);
@@ -94,7 +93,6 @@ body {
     text-align: left;
     margin-bottom: 20px;
 }
-
 
 #rendezvenyek_kepek {
     width: 35%; 
@@ -182,7 +180,6 @@ body {
     width: 100%;
 }
 
-
 .racs {
     display: flex !important; 
     flex-direction: row !important;
@@ -216,7 +213,6 @@ body {
     border: #f3bc77 solid 2px;
 }
 
-
 .lablec {
     background-color: #f3bc77;
     color: #462215;
@@ -229,18 +225,64 @@ body {
     display: none; 
 }
 
+/* --- ÚJ MÓDOSÍTÁSOK AZ ITALOKHOZ --- */
 
-.italdiv{
-    
-    .italcim{
-        font-size: 2em;
-    } 
-}
-.italbox img{
-    max-width: 400px;
+/* Az italokat befoglaló konténer (ezt add hozzá a HTML-edhez a .italbox-ok köré) */
+.ital-kontener {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
 }
 
+.italdiv {
+    width: 100%;
+    text-align: center;
+}
+
+.italdiv .italcim {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Az egyedi ital kártya módosítása */
+.italbox {
+    /* 4 elem egymás mellett: (100% / 4) - gap */
+    width: calc(25% - 20px);
+    min-width: 250px;
+    background-image: url("../img/fa.jpeg"); /* A kért fa háttér */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #f3bc77;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    display: grid;
+}
+
+.italbox img {
+    /* Módosítottam 400px-ről, hogy elférjen a 4 oszlopban */
+    max-width: 100%; 
+    height: auto;
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.5));
+}
+
+.italbox p {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+    margin-top: 10px;
+}
+
+/* --- Reszponzív rész kiegészítése --- */
 @media (max-width: 850px) {
+    /* ... az eredeti media query tartalma változatlan ... */
+    
     .navbar {
         justify-content: space-between;
         padding: 10px 15px;
@@ -289,12 +331,16 @@ body {
         padding: 12px;
     }
 
-
     .racs, 
     .dolgozo-racs, 
     .tartalom2 > div:not(.hater) {
         flex-direction: column !important;
         text-align: center;
+    }
+
+    /* Italok mobilnézetben */
+    .italbox {
+        width: calc(50% - 20px); /* Mobilon 2 egymás mellett */
     }
 
     .utca-kep, 
@@ -308,5 +354,11 @@ body {
     
     .dolgozo-racs {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .italbox {
+        width: 100%; /* Egészen kicsi kijelzőn 1 oszlop */
     }
 }
