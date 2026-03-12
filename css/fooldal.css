@@ -135,17 +135,58 @@ body {
     justify-items: center;
 }
 
+.ital-racs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    justify-items: center;
+}
+
+/* reszponzív kollekció: kisebb képernyőkön 2 majd 1 oszlop */
+@media (max-width: 1024px) {
+    .ital-racs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .ital-racs {
+        grid-template-columns: 1fr;
+    }
+}
+
 .kartya {
     background-color: #462215;
     padding: 25px;
     border-radius: 20px;
     width: 100%;
-    max-width: 450px;
+    max-width: 380px;
     text-align: center;
     box-shadow: 0 8px 15px rgba(0,0,0,0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* fix height so all cards line up */
+    min-height: 450px;
+    justify-content: space-between;
+}
+
+.italkep {
+    width: 100%;
+    height: 250px; /* consistent container height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 2px solid #f3bc77;
+    background-color: rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+}
+
+.italkep img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .kartya img {
@@ -153,7 +194,8 @@ body {
     height: auto;
     border-radius: 15px;
     margin-bottom: 15px;
-    border: 2px solid #f3bc77;
+    /* kép körüli keretet a .italkep adja, ne duplázzuk */
+    border: none;
 }
 
 .kartya h3 {
@@ -251,7 +293,7 @@ body {
     /* 4 elem egymás mellett: (100% / 4) - gap */
     width: calc(25% - 20px);
     min-width: 250px;
-    background-image: url("../img/fa.jpeg"); /* A kért fa háttér */
+   /* A kért fa háttér */
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -263,13 +305,21 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     margin-bottom: 20px;
     display: grid;
+    background-color: #462215;
+}
+.italkep{
+     background-image: url("../img/fa.jpeg"); 
+     border-radius: 15px;
+     height: 110%;
+
 }
 
 .italbox img {
     /* Módosítottam 400px-ről, hogy elférjen a 4 oszlopban */
-    max-width: 100%; 
+    max-width: 90%; 
     height: auto;
     filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.5));
+
 }
 
 .italbox p {
