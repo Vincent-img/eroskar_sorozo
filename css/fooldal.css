@@ -69,6 +69,18 @@ body {
     font-size: 1.4em;
 }
 
+.kategoria-cim {
+    text-align: center;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 15px;
+    background-image: url("../img/fa.jpeg");
+    background-size: cover;
+    font-size: 1.2em;
+}
+
 .tartalom2 {
     background-color: rgb(154, 97, 60);
     text-align: center;
@@ -136,22 +148,40 @@ body {
 }
 
 .ital-racs {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-    justify-items: center;
+    /* Eltávolítottuk a grid tulajdonságokat, mert a .italosztalyok kezeli a grid-et */
 }
 
-/* reszponzív kollekció: kisebb képernyőkön 2 majd 1 oszlop */
+.italosztalyok {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    justify-content: center;
+}
+
+/* reszponzív kollekció: kisebb képernyőkön automatikusan kevesebb oszlop */
 @media (max-width: 1024px) {
-    .ital-racs {
-        grid-template-columns: 1fr 1fr;
+    .italosztalyok {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 @media (max-width: 600px) {
-    .ital-racs {
-        grid-template-columns: 1fr;
+    .italosztalyok {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+}
+
+.nevek {
+    text-align: center;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 15px;
+    background-image: url("../img/fa.jpeg");
+    background-size: cover;
+    font-size: 1.2em;
+    border: 3px solid #f3bc77;
 }
 
 .kartya {
