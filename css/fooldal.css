@@ -209,8 +209,8 @@ body {
 
 /* Jägermeister képek mérete */
 .italkep img[src*="jager"] {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 70%;
+    max-height: 70%;
 }
 
 /* Pálinka képek mérete */
@@ -245,8 +245,8 @@ body {
 
 /* Monster képek mérete */
 .italkep img[src*="monster"] {
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 70%;
+    max-height: 70%;
 }
 
 /* Víz képek mérete */
@@ -257,8 +257,8 @@ body {
 
 /* Xixo képek mérete */
 .italkep img[src*="xixo"] {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 70%;
+    max-height: 70%;
 }
 
 /* Egyéb ital képek mérete */
